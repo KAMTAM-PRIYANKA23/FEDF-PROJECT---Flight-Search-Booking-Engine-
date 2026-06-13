@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div align="center">
 <img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
 </div>
@@ -18,3 +19,7 @@ View your app in AI Studio: https://ai.studio/apps/3792efd5-8a7a-442c-908f-d031a
 2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
 3. Run the app:
    `npm run dev`
+=======
+# FEDF-PROJECT---Flight-Search-Booking-Engine-
+A web-based Flight Search and Booking Engine built with React.js, Node.js, Express.js, REST APIs, and LocalStorage.
+>>>>>>> d309a4b2a4a0cf7061c0dd1e5859584a02e18411
