@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Login from "./components/Login";
 import Signup from "./components/Signup";
+import Dashboard from "./components/Dashboard";
 
 function Layout({ children }: { children: React.ReactNode }) {
   return (
@@ -21,12 +22,15 @@ export default function App() {
       <Layout>
         <Routes>
 
-          {/* Module 1 Routes */}
+          {/* Module 1 */}
           <Route path="/" element={<Navigate to="/login" />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
 
-          {/* All other routes redirect to Login */}
+          {/* Module 2 */}
+          <Route path="/dashboard" element={<Dashboard />} />
+
+          {/* Any other route */}
           <Route path="*" element={<Navigate to="/login" />} />
 
         </Routes>
