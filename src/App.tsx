@@ -1,40 +1,35 @@
-import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
-import Login from "./components/Login";
-import Signup from "./components/Signup";
-import Dashboard from "./components/Dashboard";
+import Login from './components/Login';
+import Signup from './components/Signup';
+import Dashboard from './components/Dashboard';
+import SearchFlights from './components/SearchFlights';
+import FlightDetails from './components/FlightDetails';
 
-function Layout({ children }: { children: React.ReactNode }) {
+function App() {
   return (
-    <div className="min-h-screen flex flex-col">
-      <Navbar />
-      <main className="flex-1">{children}</main>
-      <Footer />
-    </div>
+    <BrowserRouter>
+      <Routes>
+
+        {/* Authentication */}
+        <Route path="/" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
+
+        {/* Dashboard */}
+        <Route path="/dashboard" element={<Dashboard />} />
+
+        {/* Flight Search */}
+        <Route path="/search-flights" element={<SearchFlights />} />
+
+        {/* Flight Details */}
+        <Route path="/flight-details/:flightId" element={<FlightDetails />} />
+
+        {/* Unknown Route */}
+        <Route path="*" element={<Navigate to="/" replace />} />
+
+      </Routes>
+    </BrowserRouter>
   );
 }
 
-export default function App() {
-  return (
-    <Router>
-      <Layout>
-        <Routes>
-
-          {/* Module 1 */}
-          <Route path="/" element={<Navigate to="/login" />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<Signup />} />
-
-          {/* Module 2 */}
-          <Route path="/dashboard" element={<Dashboard />} />
-
-          {/* Any other route */}
-          <Route path="*" element={<Navigate to="/login" />} />
-
-        </Routes>
-      </Layout>
-    </Router>
-  );
-}
+export default App;

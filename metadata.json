@@ -1,0 +1,6 @@
+{
+  "name": "SkyWings Airlines Booking System",
+  "description": "A beginner-friendly airline booking application with mock flight searching, passenger forms, and booking management using local storage.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
